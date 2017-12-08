@@ -67,7 +67,9 @@ class RssView extends BaseListView
                 throw new InvalidConfigException('Required item attribute "' . $itemElement . '" must be set');
             }
         }
-        $this->feed = new Feed;
+        if($this->feed == null) {
+            $this->feed = new Feed;
+        }
     }
 
     /**
